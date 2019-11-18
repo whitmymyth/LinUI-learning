@@ -1,0 +1,28 @@
+<view>
+  <image class="top-theme" src="{{topTheme.entrance_img}}"></image>
+</view>
+<view>
+  <swiper class="swiper"
+          indicator-dots
+          indicator-color="#158952"
+          autoplay
+          circular>
+    <block wx:for="{{topBanner.items}}">
+        <swiper-item>
+          <image class="swiper" src="{{item.img}}"></image>
+        </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view>
+  <s-category-grid category="{{category}}"></s-category-grid>
+</view>
+<view>
+    <image class="couponimg" src="{{coupontheme.entrance_img}}"></image>
+</view>
+<view>
+    <s-spu-scroll theme="{{themeE}}" spu-data="{{spuData}}"></s-spu-scroll>
+</view>
+<view>
+    
+</view>

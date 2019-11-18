@@ -1,0 +1,48 @@
+/* components/spu-scroll/index.wxss */
+.content{
+    padding: 42rpx 0 34rpx 28rpx;
+}
+.scrollimg{
+    width: 694rpx;
+    height: 90rpx;
+}
+
+.scrollcontent{
+    margin-top: 28rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.spucontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 60rpx;
+}
+
+.spuimg{
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.goodstitle{
+    font-size: 20rpx;
+    color: #666666;
+    margin-top: 20rpx;
+    /*使用css使多余文字以省略号替代，必须设定文字框宽度*/
+    /*但若设定宽度，则若文字内容少，则内部文字以【居左】样式展示*/
+    /*但实际上文字框是居中显示的，这样显示效果不好*/
+    /*width: 150rpx;*/
+    /*overflow: hidden;*/
+    /*text-overflow:ellipsis;*/
+    /*white-space: nowrap;*/
+}
+
+.priceunit{
+    font-size: 24rpx !important;
+}
+
+.pricevalue{
+    font-size: 26rpx !important;
+}

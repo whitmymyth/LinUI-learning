@@ -1,0 +1,11 @@
+<!--commonpages/category-grid/index.wxml-->
+<view class="content">
+    <l-grid l-class="inner-content">
+        <block wx:for="{{category}}">
+            <l-grid-item class="griditem" slot="{{index}}" key="{{index}}">
+                <image class="griditem-img" src="{{item.img}}"></image>
+                <text class="griditem-text">{{item.title}}</text>
+            </l-grid-item>
+        </block>
+    </l-grid>
+</view>

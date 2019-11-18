@@ -1,0 +1,32 @@
+<!--components/spu-scroll/index.wxml-->
+<wxs src="../../miniprogram_npm/lin-ui/filter/string.wxs" module="s"/>
+<view class="content">
+    <image class="scrollimg" src="{{theme.title_img}}"></image>
+    <scroll-view
+        scroll-x
+        enable-flex
+        class="scrollcontent">
+        <block wx:for="{{spuData}}">
+            <view class="spucontent">
+                <image class="spuimg" src="{{item.img}}"></image>
+                <l-price
+                        color="#157658"
+                        l-unit-class="priceunit"
+                        l-vlue-class="pricevalue"
+                        value="{{item.price}}"></l-price>
+                <text class="goodstitle">{{item.title.length>=8?s.substring(item.title,0,7):item.title}}</text>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+
+<!--关于多余汉字隐藏并以省略号替代解决方式：-->
+<!--1、服务端处理（不可取-->
+<!--2、逻辑JS处理（不可取，因为此处仅为样式显示，并不涉及逻辑-->
+<!--3、Css样式（不好，详见index.wxss分析-->
+<!--4、wxs（详见lin-ui filter组件-->
+
+<!--小程序是以Web驱动技术实现-->
+<!--小程序JS：逻辑层/视图层（渲染层）-->
+<!--运行环境：IOS、Android、开发工具（PC）-->
+<!--环境：JavaScriptCode/WKWebview、V8/XWeb（基于Chrome）、Nw.js/Chromuim-->
