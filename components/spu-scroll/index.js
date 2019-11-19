@@ -1,5 +1,8 @@
 // components/spu-scroll/index.js
 Component({
+
+  //实现外部样式类接收
+  externalClasses: ['s-class'],
   /**
    * 组件的属性列表
    */

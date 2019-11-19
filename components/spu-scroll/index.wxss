@@ -1,6 +1,7 @@
 /* components/spu-scroll/index.wxss */
 .content{
     padding: 42rpx 0 34rpx 28rpx;
+    background-color: #ffffff;
 }
 .scrollimg{
     width: 694rpx;
