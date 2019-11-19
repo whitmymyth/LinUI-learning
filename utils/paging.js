@@ -4,7 +4,7 @@
 import {Xcxhttp} from "./xcxhttp";
 
 class Paging {
-  url //原始url
+  url //原始url 防止方法内部req.url导致污染此url
   req //封装请求参数object
   start //获取记录的起始序号
   count //一次获取记录的条数
@@ -13,7 +13,7 @@ class Paging {
   accumulator = []
 
 
-  //构造方法
+  //构造方法 第一个参数是对象类型{url,data,method}
   constructor(req, count=10, start=0){
     this.req = req
     this.count = count
@@ -30,7 +30,13 @@ class Paging {
     this._relaseLocker()
   }
 
-  //获取数据方法 返回对象类型
+  //获取数据方法 返回对象类型：
+  // {
+  //   empty: true, //是否为空
+  //   items: [], //本次查询返回列表（数组）
+  //   moreData: false, //是否有更多数据
+  //   accumulator: [] //累加数据（数组）
+  // }
   _realGetData(){
     const req = this._getHttpReq()
     const paging = Xcxhttp.request(req)
@@ -45,6 +51,7 @@ class Paging {
         accumulator: []
       }
     }
+    //是否有更多数据
     this.moreData = this._moreData(paging.total_page, paging.page)
     this.accumulator = this.accumulator.concat(paging.items)
     if(this.moreData){
@@ -96,4 +103,8 @@ class Paging {
   _relaseLocker(){
     this.locker = false
   }
+}
+
+export {
+  Paging
 }
