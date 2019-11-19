@@ -1,0 +1,11 @@
+<!--components/hot-list/index.wxml-->
+<view class="content">
+    <image class="extimg" src="{{bannerExt.img}}"></image>
+    <view class="inner-content">
+        <image class="leftimg" src="{{left.img}}"></image>
+        <view class="rightcontent">
+            <image class="rightimg" src="{{righttop.img}}"></image>
+            <image class="rightimg" src="{{rightbuttom.img}}"></image>
+        </view>
+    </view>
+</view>

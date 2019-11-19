@@ -1,0 +1,38 @@
+/* components/hot-list/index.wxss */
+.content{
+  padding-top: 20rpx;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.extimg{
+  width: 690rpx;
+  height: 90rpx;
+}
+
+.inner-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.leftimg{
+  display: flex;
+  width: 346rpx;
+  height: 522rpx;
+}
+
+.rightcontent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightimg{
+  width: 400rpx;
+  height: 260rpx;
+  display: flex;
+}
