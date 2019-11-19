@@ -1,2 +1,8 @@
 <!--components/spu-preview/index.wxml-->
-<text>components/spu-preview/index.wxml</text>
+<view>
+    <image src="{{}}"></image>
+    <text>{{}}</text>
+    <view></view>
+    <l-price value="{{}}"></l-price>
+    <text>{{}}</text>
+</view>
