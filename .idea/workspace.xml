@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b38452c8-0f7e-4c59-b060-a9778ac057bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/READ.ME" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/paging.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/spu-preview/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/components/spu-preview/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/paging.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/paging.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,7 +51,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ME" value="41" />
-          <entry key="js" value="4098" />
+          <entry key="js" value="4234" />
           <entry key="json" value="234" />
           <entry key="txt" value="8" />
           <entry key="wxml" value="1355" />
@@ -65,7 +62,7 @@
         <counts>
           <entry key="HTML" value="1355" />
           <entry key="JSON" value="234" />
-          <entry key="JavaScript" value="4098" />
+          <entry key="JavaScript" value="4234" />
           <entry key="PLAIN_TEXT" value="56" />
           <entry key="Wxss" value="918" />
         </counts>
@@ -95,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/paging.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="149">
+              <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -204,8 +201,8 @@
         <option value="$PROJECT_DIR$/components/spu-preview/index.js" />
         <option value="$PROJECT_DIR$/pages/home/home.js" />
         <option value="$PROJECT_DIR$/components/spu-preview/index.wxml" />
-        <option value="$PROJECT_DIR$/utils/paging.js" />
         <option value="$PROJECT_DIR$/READ.ME" />
+        <option value="$PROJECT_DIR$/utils/paging.js" />
       </list>
     </option>
   </component>
@@ -226,8 +223,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="644" />
-    <option name="y" value="139" />
+    <option name="x" value="457" />
+    <option name="y" value="168" />
     <option name="width" value="1245" />
     <option name="height" value="814" />
   </component>
@@ -366,6 +363,11 @@
               <item name="Test" type="b2602c69:ProjectViewProjectNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -411,7 +413,7 @@
       <workItem from="1574035398944" duration="3806000" />
       <workItem from="1574043304178" duration="5184000" />
       <workItem from="1574055409209" duration="4749000" />
-      <workItem from="1574123624766" duration="17960000" />
+      <workItem from="1574123624766" duration="19225000" />
     </task>
     <task id="LOCAL-00001" summary="test msg">
       <created>1574132662736</created>
@@ -441,11 +443,25 @@
       <option name="project" value="LOCAL" />
       <updated>1574133264413</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test msg">
+      <created>1574147376878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574147376878</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test msg">
+      <created>1574149285823</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574149285823</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58829000" />
+    <option name="totallyTimeSpent" value="60094000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -457,10 +473,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="644" y="139" width="1245" height="814" extended-state="0" />
+    <frame x="457" y="168" width="1245" height="814" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22369511" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22369511" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -472,7 +488,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32991204" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32892805" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32842416" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32892805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -511,18 +527,6 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="test msg" />
     <option name="LAST_COMMIT_MESSAGE" value="test msg" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/utils/paging.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/从Java后端到全栈/APPKEY/wxshop/wxshop/banner.json">
@@ -855,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/paging.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state relative-caret-position="149">
+          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
         </state>
       </provider>
     </entry>

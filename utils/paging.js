@@ -93,7 +93,7 @@ class Paging {
 
   //获取数据锁 防止用户多次刷新请求
   _getLocker(){
-    if(!this.locker){
+    if(!this.locker) {
       return true
     }
     return false
