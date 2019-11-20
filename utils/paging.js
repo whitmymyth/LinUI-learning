@@ -2,6 +2,7 @@
 * created by czb on 2019-11-19
 */
 import {Xcxhttp} from "./xcxhttp";
+import {FakePaging} from "../model/fake-paging";
 
 class Paging {
   url //原始url 防止方法内部req.url导致污染此url
@@ -9,9 +10,9 @@ class Paging {
   start //获取记录的起始序号
   count //一次获取记录的条数
   locker = false
-  moreData
-  accumulator = []
-
+  moreData = true
+  sumData = [] //所有组合数据
+  returnData = {}
 
   //构造方法 第一个参数是对象类型{url,data,method}
   constructor(req, count=10, start=0){
@@ -22,12 +23,15 @@ class Paging {
   }
 
   //暴露方法
-  getMoreData(){
+  async getMoreData(){
+    if(!this.moreData){
+      return
+    }
     if(this._getLocker()){
-      //请求
-      this._realGetData()
+      await this._realGetData()
     }
     this._relaseLocker()
+    return this.returnData
   }
 
   //获取数据方法 返回对象类型：
@@ -38,13 +42,17 @@ class Paging {
   //   accumulator: [] //累加数据（数组）
   // }
   _realGetData(){
-    const req = this._getHttpReq()
-    const paging = Xcxhttp.request(req)
+    //http请求
+    // const req = this._getHttpReq()
+    // const paging = Xcxhttp.request(req)
+    //本地请求 为实现使用本地化分页假数据
+    const paging = FakePaging.getData(this.start, this.count)
+    //本地假数据
     if(!paging){
       return null
     }
     if(paging.total === 0){
-      return {
+      this.returnData = {
         empty: true,
         items: [],
         moreData: false,
@@ -52,26 +60,24 @@ class Paging {
       }
     }
     //是否有更多数据
-    this.moreData = this._moreData(paging.total_page, paging.page)
-    this.accumulator = this.accumulator.concat(paging.items)
-    if(this.moreData){
-      return {
-        empty: true,
-        items: paging.items,
-        moreData: true,
-        accumulator: this.accumulator
-      }
-    }
-    return {
+    this.moreData = Paging._moreData(paging.total_page, paging.page)
+    this._accumulatorSumData(paging.items)
+    this.start += this.count
+    this.returnData = {
       empty: true,
       items: paging.items,
-      moreData: false,
-      accumulator: this.accumulator
+      moreData: this.moreData,
+      accumulator: this.sumData
     }
   }
 
+  //计算所有数据
+  _accumulatorSumData(items){
+    this.sumData = this.sumData.concat(items)
+  }
+
   //判断是否有更多数据 根据总页码和当前页码判断
-  _moreData(totalPage, nowPage){
+  static _moreData(totalPage, nowPage){
     return nowPage < totalPage - 1
   }
 
@@ -96,6 +102,7 @@ class Paging {
     if(!this.locker) {
       return true
     }
+    this.locker = true
     return false
   }
 

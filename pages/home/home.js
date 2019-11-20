@@ -3,6 +3,8 @@ import {Theme} from "../../model/theme";
 import {Banner} from "../../model/banner";
 import {Category} from "../../model/category";
 import {Coupontheme} from "../../model/coupontheme";
+import {SpuPaging} from "../../model/spu-paging";
+import {FakePaging} from "../../model/fake-paging";
 
 Page({
 
@@ -689,6 +691,12 @@ Page({
     const category = await Category.getHomeCategory();
     const coupontheme = await Coupontheme.getHomeCouponTheme();
     const spuData = this.data.spuDataAll.slice(0,8);
+
+    //测试使用 详见方法描述
+    // this.initGetFakeData();
+
+    //组成分页数据实现
+    this.initBottomSpuData();
     this.setData({
       topTheme_api: themeApi[0],
       topBanner_api: bannerApi,
@@ -697,6 +705,23 @@ Page({
       spuData: spuData
     })
     console.log('end')
+  },
+
+  //测试本地化分页假数据方法
+  //目前以集成在initBottomSpuData-SpuPaging-Paging方法内部
+  //详见方法内部实现逻辑
+  initGetFakeData(){
+    const res = FakePaging.getData(0, 10);
+    console.log(res)
+  },
+
+  async initBottomSpuData(){
+    const paging = SpuPaging.getPagingData();
+    const res = await paging.getMoreData();
+    console.log(res)
+    if(!res){
+      return
+    }
   },
 
   onReady: function () {
