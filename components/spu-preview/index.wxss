@@ -1,1 +1,9 @@
 /* components/spu-preview/index.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+}
+
+.goodsimg{
+
+}

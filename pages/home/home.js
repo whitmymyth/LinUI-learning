@@ -686,11 +686,11 @@ Page({
 
   async initAll() {
     //Lin-UI测试
-    const themeApi = await Theme.getHomeTopLocationA();
-    const bannerApi = await Banner.getHomeBanner();
-    const category = await Category.getHomeCategory();
-    const coupontheme = await Coupontheme.getHomeCouponTheme();
-    const spuData = this.data.spuDataAll.slice(0,8);
+    const themeApi = await Theme.getHomeTopLocationA()
+    const bannerApi = await Banner.getHomeBanner()
+    const category = await Category.getHomeCategory()
+    const coupontheme = await Coupontheme.getHomeCouponTheme()
+    const spuData = this.data.spuDataAll.slice(0,8)
 
     //测试使用 详见方法描述
     // this.initGetFakeData();
@@ -711,16 +711,21 @@ Page({
   //目前以集成在initBottomSpuData-SpuPaging-Paging方法内部
   //详见方法内部实现逻辑
   initGetFakeData(){
-    const res = FakePaging.getData(0, 10);
+    const res = FakePaging.getData(0, 10)
     console.log(res)
   },
 
   async initBottomSpuData(){
-    const paging = SpuPaging.getPagingData();
-    const res = await paging.getMoreData();
-    console.log(res)
-    if(!res){
+    const paging = SpuPaging.getPagingData()
+    const spuData = await paging.getMoreData()
+    console.log(spuData)
+    if(!spuData){
       return
+    }
+    if(!spuData.empty){
+      wx.lin.renderWaterFlow(spuData.items, false, ()=>{
+        console.log('渲染完成')
+      })
     }
   },
 
@@ -733,14 +738,10 @@ Page({
   },
 
   onPullDownRefresh: function () {
-
+    this.onLoad()
   },
 
   onReachBottom: function () {
-
-  },
-
-  onShareAppMessage: function () {
-
+    //this.initBottomSpuData()
   }
 })

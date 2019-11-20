@@ -34,5 +34,7 @@
 </view>
 <view class="spu-bottom">
     <image class="waterflowimg" src="/imgs/home/title@interest.png"></image>
-    <l-water-flow generic:l-water-flow-item="l-demo"></l-water-flow>
+    <l-water-flow
+            column-gap="20rpx"
+            generic:l-water-flow-item="s-spu-preview"></l-water-flow>
 </view>

@@ -1,8 +1,10 @@
 <!--components/spu-preview/index.wxml-->
-<view>
-    <image src="{{}}"></image>
-    <text>{{}}</text>
-    <view></view>
-    <l-price value="{{}}"></l-price>
-    <text>{{}}</text>
+<view class="content">
+    <image src="goodsimg" src="{{data.img}}"></image>
+    <text>{{data.title}}</text>
+    <view>
+        <text>{{data.tags}}</text>
+    </view>
+    <l-price value="{{data.price}}"></l-price>
+    <text>{{data.subtitle}}</text>
 </view>

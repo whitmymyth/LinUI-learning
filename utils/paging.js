@@ -90,7 +90,8 @@ class Paging {
     //两种格式
     //1、用户提供url类似 xx/xx?BB=2 则 + & + start=0&count=10
     //2、用户提供url类似 XX/xx 则 + ? + start=0&count=10
-    if(url.indexOf('?') !== -1){
+    //if(url.indexOf('?') !== -1){
+    if(!url.includes('?')){
       url += `?` + params
     }else {
       url += `&` + params
