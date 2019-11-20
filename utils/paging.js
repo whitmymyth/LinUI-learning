@@ -12,7 +12,6 @@ class Paging {
   locker = false
   moreData = true
   sumData = [] //所有组合数据
-  returnData = {}
 
   //构造方法 第一个参数是对象类型{url,data,method}
   constructor(req, count=10, start=0){
@@ -27,11 +26,12 @@ class Paging {
     if(!this.moreData){
       return
     }
-    if(this._getLocker()){
-      await this._realGetData()
+    if(!this._getLocker()){
+      return
     }
+    const data = await this._realGetData()
     this._relaseLocker()
-    return this.returnData
+    return data
   }
 
   //获取数据方法 返回对象类型：
@@ -41,18 +41,18 @@ class Paging {
   //   moreData: false, //是否有更多数据
   //   accumulator: [] //累加数据（数组）
   // }
-  _realGetData(){
+  async _realGetData(){
     //http请求
     // const req = this._getHttpReq()
     // const paging = Xcxhttp.request(req)
     //本地请求 为实现使用本地化分页假数据
-    const paging = FakePaging.getData(this.start, this.count)
+    const paging = await FakePaging.getData(this.start, this.count)
     //本地假数据
     if(!paging){
       return null
     }
     if(paging.total === 0){
-      this.returnData = {
+      return {
         empty: true,
         items: [],
         moreData: false,
@@ -61,10 +61,12 @@ class Paging {
     }
     //是否有更多数据
     this.moreData = Paging._moreData(paging.total_page, paging.page)
+    if(this.moreData){
+      this.start += this.count
+    }
     this._accumulatorSumData(paging.items)
-    this.start += this.count
-    this.returnData = {
-      empty: true,
+    return {
+      empty: false,
       items: paging.items,
       moreData: this.moreData,
       accumulator: this.sumData
