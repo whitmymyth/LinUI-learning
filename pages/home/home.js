@@ -675,12 +675,26 @@ Page({
     topBanner_api:{},
     category_api:{},
     coupontheme_api:{},
-    spuData: []
+    spuData: [],
+    spuPaging: {},
+    loadingType: 'loading',
+    showLoading: true
   },
 
   onLoad: function (options) {
+    const that = this
     console.log('进入initAll')
+    //组装首页数据
     this.initAll();
+    //组成分页数据实现
+    this.initBottomSpuData();
+    //测试页面加载中提示
+    //设定定时器模拟加载中
+    setTimeout(function(){
+      that.setData({
+        showLoading: false
+      })
+    }, 3000);
     console.log('完成initAll')
   },
 
@@ -695,8 +709,6 @@ Page({
     //测试使用 详见方法描述
     // this.initGetFakeData();
 
-    //组成分页数据实现
-    this.initBottomSpuData();
     this.setData({
       topTheme_api: themeApi[0],
       topBanner_api: bannerApi,
@@ -717,16 +729,15 @@ Page({
 
   async initBottomSpuData(){
     const paging = SpuPaging.getPagingData()
+    this.spuPaging = paging
     const spuData = await paging.getMoreData()
     console.log(spuData)
     if(!spuData){
       return
     }
-    if(!spuData.empty){
-      wx.lin.renderWaterFlow(spuData.items, false, ()=>{
-        console.log('渲染完成')
-      })
-    }
+    wx.lin.renderWaterFlow(spuData.items, false, ()=>{
+      console.log('渲染完成')
+    })
   },
 
   onReady: function () {
@@ -737,11 +748,19 @@ Page({
 
   },
 
-  onPullDownRefresh: function () {
-    this.onLoad()
-  },
-
-  onReachBottom: function () {
-    //this.initBottomSpuData()
+  onReachBottom: async function () {
+    const spuData = await this.spuPaging.getMoreData()
+    console.log(spuData)
+    if(!spuData){
+      return
+    }
+    if(!spuData.moreData){
+      this.setData({
+        loadingType: 'end'
+      })
+    }
+    wx.lin.renderWaterFlow(spuData.items, false, ()=>{
+      console.log('渲染完成')
+    })
   }
 })

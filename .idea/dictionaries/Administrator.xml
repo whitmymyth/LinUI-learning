@@ -7,10 +7,14 @@
       <w>coupontheme</w>
       <w>extimg</w>
       <w>goodsimg</w>
+      <w>goodsprice</w>
       <w>goodstitle</w>
       <w>griditem</w>
       <w>imgs</w>
       <w>leftimg</w>
+      <w>lineprice</w>
+      <w>loadmore</w>
+      <w>mainprice</w>
       <w>miniprogram</w>
       <w>priceunit</w>
       <w>pricevalue</w>
@@ -25,6 +29,7 @@
       <w>righttopimg</w>
       <w>scrollcontent</w>
       <w>scrollimg</w>
+      <w>showloadmore</w>
       <w>sitemap</w>
       <w>spucontent</w>
       <w>spuimg</w>

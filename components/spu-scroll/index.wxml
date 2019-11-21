@@ -1,5 +1,6 @@
 <!--components/spu-scroll/index.wxml-->
 <wxs src="../../miniprogram_npm/lin-ui/filter/string.wxs" module="s"/>
+<wxs src="../../wxs/price.wxs" module="p"></wxs>
 <view class="content s-class">
     <image class="scrollimg" src="{{theme.title_img}}"></image>
     <scroll-view
@@ -13,7 +14,7 @@
                         color="#157658"
                         l-unit-class="priceunit"
                         l-vlue-class="pricevalue"
-                        value="{{item.price}}"></l-price>
+                        value="{{p.getMainPrice(item.price,item.discount_price)}}"></l-price>
                 <text class="goodstitle">{{item.title.length>=8?s.substring(item.title,0,7):item.title}}</text>
             </view>
         </block>

@@ -4,6 +4,7 @@
     "s-spu-scroll": "/components/spu-scroll/index",
     "s-hot-list": "/components/hot-list/index",
     "l-water-flow": "/miniprogram_npm/lin-ui/water-flow/index",
+    "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index",
     "s-spu-preview": "/components/spu-preview/index"
   }
 }

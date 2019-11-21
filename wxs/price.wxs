@@ -1,0 +1,23 @@
+
+// 获取未被删除线覆盖的价格
+function getMainPrice(price, discount_price){
+  if(!discount_price){
+    return price
+  }else {
+    return discount_price
+  }
+}
+
+// 获取被删除线覆盖的价格
+function getLinePrice(price, discount_price) {
+  if(!discount_price){
+    return
+  }else {
+    return price
+  }
+}
+
+module.exports = {
+  getMainPrice: getMainPrice
+  getLinePrice: getLinePrice
+}

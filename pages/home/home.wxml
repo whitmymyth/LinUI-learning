@@ -1,40 +1,52 @@
-<view>
-  <image class="top-theme" src="{{topTheme.entrance_img}}"></image>
-</view>
-<view>
-  <swiper class="swiper"
-          indicator-dots
-          indicator-color="#158952"
-          autoplay
-          circular>
-    <block wx:for="{{topBanner.items}}">
-        <swiper-item>
-          <image class="swiper" src="{{item.img}}"></image>
-        </swiper-item>
-    </block>
-  </swiper>
-</view>
-<view>
-    <s-category-grid category="{{category}}"></s-category-grid>
-</view>
-<view>
-    <image class="couponimg" src="{{coupontheme.entrance_img}}"></image>
-</view>
-<view>
-    <s-spu-scroll s-class="spu-scroll" theme="{{themeE}}" spu-data="{{spuData}}"></s-spu-scroll>
-</view>
-<view>
-    <image class="themeD" src="{{themeD.entrance_img}}"></image>
-</view>
-<view>
-    <s-hot-list bannerExt="{{bannerExt}}"></s-hot-list>
-</view>
-<view>
-    <image class="themeE" src="{{themeE.entrance_img}}"></image>
-</view>
-<view class="spu-bottom">
-    <image class="waterflowimg" src="/imgs/home/title@interest.png"></image>
-    <l-water-flow
-            column-gap="20rpx"
-            generic:l-water-flow-item="s-spu-preview"></l-water-flow>
-</view>
+<l-loading
+        type="flash"
+        show="{{showLoading}}"
+        full-screen
+        z-index="776"
+        opacity="1">
+</l-loading>
+<l-loadmore
+        end-text="- 版权所有 CZB -"
+        type="{{loadingType}}"
+        show>
+    <view slot="content">
+        <view>
+          <image class="top-theme" src="{{topTheme.entrance_img}}"></image>
+        </view>
+        <view>
+          <swiper class="swiper"
+                  indicator-dots
+                  indicator-color="#158952"
+                  autoplay
+                  circular>
+            <block wx:for="{{topBanner.items}}">
+                <swiper-item>
+                  <image class="swiper" src="{{item.img}}"></image>
+                </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view>
+            <s-category-grid category="{{category}}"></s-category-grid>
+        </view>
+        <view>
+            <image class="couponimg" src="{{coupontheme.entrance_img}}"></image>
+        </view>
+        <view>
+            <s-spu-scroll s-class="spu-scroll" theme="{{themeE}}" spu-data="{{spuData}}"></s-spu-scroll>
+        </view>
+        <view>
+            <image class="themeD" src="{{themeD.entrance_img}}"></image>
+        </view>
+        <view>
+            <s-hot-list bannerExt="{{bannerExt}}"></s-hot-list>
+        </view>
+        <view>
+            <image class="themeE" src="{{themeE.entrance_img}}"></image>
+        </view>
+        <view class="spu-bottom">
+            <image class="waterflowimg" src="/imgs/home/title@interest.png"></image>
+            <l-water-flow generic:l-water-flow-item="s-spu-preview"></l-water-flow>
+        </view>
+    </view>
+</l-loadmore>
