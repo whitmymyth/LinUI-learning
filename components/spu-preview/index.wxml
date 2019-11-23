@@ -1,6 +1,6 @@
 <!--components/spu-preview/index.wxml-->
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
-<view class="content">
+<view class="content" bindtap="goodsDetail" data-id="{{data.id}}">
     <image
             lazy-load
             mode="widthFix"

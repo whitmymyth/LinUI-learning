@@ -36,6 +36,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goodsDetail(e){
+      const pid = e.currentTarget.dataset.id
+      wx.redirectTo({
+        url: `/pages/detail/detail?pid=${pid}`
+      })
+    }
   }
 })
